@@ -29,12 +29,14 @@ class usuariosRepository {
               });
             } else {
               const cryptedUser = await encryptUser(data);
+              const token = await genereteToken(cryptedUser);
               this.db.query(
                 `INSERT INTO usuarios (email, senha, nome) VALUES(?,?,?)`,
                 [cryptedUser.email, cryptedUser.senha, cryptedUser.nome],
                 (error, response) => {
                   if (error) throw error;
                   return resolve({
+                    token: token,
                     success: "Usuário cadastrado com sucesso!",
                     id: response.insertId,
                   });
