@@ -9,6 +9,7 @@ const https = require("https");
 const fs = require("fs");
 require('dotenv').config({path:__dirname+'/./../.env'});
 const auth = require('./config/auth/auth');
+const ssl = require('./utils/ssl');
 
 var corsOptions = {
   "origin": "*",
@@ -17,14 +18,17 @@ var corsOptions = {
   "optionsSuccessStatus": 200
 }
 
+// const cert = ssl.certs("rh");
+// const key = ssl.keys(cert);
+
 // const options = {
 //   key: fs.readFileSync(
 //     __dirname +
-//       "/../../../ssl/keys/bdcf2_bb601_809707343dcca0bf6224e2cb86eebbae.key"
+//       "/../../../ssl/keys/" + key
 //   ),
 //   cert: fs.readFileSync(
 //     __dirname +
-//       "/../../../ssl/certs/doacaosangue_fiecdev_com_br_bdcf2_bb601_1640908799_d7972ba2e5e8ca85524d99d11b3b8b7b.crt"
+//       "/../../../ssl/certs/" + cert
 //   ),
 // };
 

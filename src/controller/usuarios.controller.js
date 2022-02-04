@@ -41,10 +41,30 @@ class usuariosController {
           else return res.status(200).json(response);
         })
         .catch((error) => {
-            console.log(error);
+          console.log(error);
           return res
             .status(400)
-            .send({ error: `Não foi possivel realizar o login` });
+            .send({ error: `Não foi possivel realizar o login!` });
+        });
+    };
+  }
+
+  recover() {
+    return function (req, res) {
+      const { data } = req.body;
+
+      usuarios
+        .recover(data)
+        .then((response) => {
+          if (response.error)
+            return res.status(response.code).send({ error: response.error });
+          else return res.status(200).json(response);
+        })
+        .catch((error) => {
+          console.log(error);
+          return res
+            .status(400)
+            .send({ error: `Não foi possivel realizar a recuperação!` });
         });
     };
   }
