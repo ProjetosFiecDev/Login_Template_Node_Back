@@ -20,8 +20,11 @@
     "html-pdf": "^3.0.1",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
+    "multer": "^1.4.4",
     "mysql": "^2.18.1",
-    "nodemailer": "^6.6.3"
+    "nodemailer": "^6.6.3",
+    "path": "^0.12.7",
+    "read-excel-file": "^5.2.28"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"

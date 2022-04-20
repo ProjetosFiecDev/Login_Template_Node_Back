@@ -4,9 +4,9 @@ require('dotenv').config({ path: __dirname + '/./../../../.env' });
 module.exports.isAuthenticated = (req, res, next) => {
     const token = req.query.auth;
     try {
-        db.query(`SELECT * FROM doadores WHERE auth=?`, [token],
+        db.query(`SELECT * FROM usuarios WHERE auth=?`, [token],
             async (error, usuarios) => {
-                if (error) return reject(new Error(error));
+                // if (error) return reject(new Error(error));
                 if (usuarios[0]) {
                     next();
                 } else {
