@@ -10,8 +10,6 @@ const fs = require("fs");
 require('dotenv').config({path:__dirname+'/./../.env'});
 const auth = require('./config/auth/auth');
 const ssl = require('./utils/ssl');
-const excel4node = require("excel4node");
-const multer = require('multer');
 
 var corsOptions = {
   "origin": "*",
